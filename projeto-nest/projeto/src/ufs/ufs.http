@@ -1,0 +1,31 @@
+## list ufs
+
+GET http://localhost:3000/ufs
+
+## get ufs
+
+GET http://localhost:3000/ufs/dev_6K8AaZPYJzC23cNKNF6eO
+
+## create ufs
+
+POST http://localhost:3000/ufs
+Content-Type: application/json
+
+{
+    "nome": "Bahia2",
+    "sigla": "BA"
+
+}
+
+## update ufs
+
+PATCH http://localhost:3000/ufs/dev_6K8AaZPYJzC23cNKNF6eO
+Content-Type: application/json
+
+{
+    "nome": "baba"
+}
+
+## deletet ufs
+
+DELETE http://localhost:3000/ufs/dev_6K8AaZPYJzC23cNKNF6eO

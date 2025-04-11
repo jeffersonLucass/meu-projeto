@@ -1,0 +1,30 @@
+## list cidades
+
+GET http://localhost:3000/cidades
+
+## get cidades
+
+GET http://localhost:3000/cidades/dev_zxBhCB792mcQ5WaF_MTKb
+
+## create cidades
+
+POST http://localhost:3000/cidades
+Content-Type: application/json
+
+{
+    "nome": "tagua2",
+    "uf_id": 6
+}
+
+## update cidades
+
+PATCH http://localhost:3000/cidades/dev_zxBhCB792mcQ5WaF_MTKb
+Content-Type: application/json
+
+{
+    "nome": "guara 2"
+}
+
+## delete cidades
+
+DELETE http://localhost:3000/cidades/dev_zxBhCB792mcQ5WaF_MTKb

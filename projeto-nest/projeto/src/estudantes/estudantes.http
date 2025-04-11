@@ -1,0 +1,33 @@
+## list estudantes
+
+GET http://localhost:3000/estudantes
+
+## get estudantes
+
+GET http://localhost:3000/estudantes/dev_NGZa-2njDTyr-Ju4S03mg
+
+## create estudantes
+
+POST http://localhost:3000/estudantes
+Content-Type: application/json
+
+{
+    "nome": "kaion2",
+    "matricula": 121,
+    "email": "kaion.legal@gmail.com",
+    "dt_nascimento": "2004-03-10",
+    "cidade_id": 12
+}
+
+## update estudantes
+
+PATCH http://localhost:3000/estudantes/dev_NGZa-2njDTyr-Ju4S03mg
+Content-Type: application/json
+
+{
+    "nome": "kaion brandao"
+}
+
+## delete estudantes
+
+DELETE http://localhost:3000/estudantes/dev_NGZa-2njDTyr-Ju4S03mg
