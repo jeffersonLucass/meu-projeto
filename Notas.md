@@ -3,13 +3,9 @@
 ## 👥 Integrantes
 
 - Nome: Gustavo Mendonça Scot
-  Matrícula:
 - Nome: Grazielly de Almeida Sabino
-  Matrícula: UC23200800
 - Nome: Jefferson Lucas Alves Rodrigues
-  Matrícula: UC23200424
 - Nome: Kaion Brandão Lima
-  Matrícula: UC23200215
 
 ## 📺 Referência
 
