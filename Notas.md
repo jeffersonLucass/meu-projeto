@@ -219,7 +219,7 @@ create(dto: CreateDeveloperDto){
 }
 ```
 
-Em `findAll`, exclui a linha 
+Em `findAll`, exclui-se a linha 
 
 ```tsx
 return `This action returns all developers`;
