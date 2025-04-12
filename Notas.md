@@ -109,7 +109,7 @@ dateOfBirth: string;
 }
 ```
 
-Para habilitar esse comportamento:
+Para habilitar esse comportamento, vá no arquivo `Main`:
 
 ```tsx
 app.useGlobalPipes(
@@ -120,7 +120,7 @@ app.useGlobalPipes(
 	);
 ```
 
-Retornando no Create Developer:
+Retornando no Create Developer, no bloco POST:
 
 ```tsx
 POST http://localhost:3000/developers
@@ -134,7 +134,7 @@ Contet-Type: application/json
 }
 ```
 
-## 🗄️ TypeORM e SQLite
+## 🗄️ TypeORM e SQLite, configurando banco de dados e criando tabelas
 
 Configuração no `app.module.ts`:
 
@@ -219,13 +219,18 @@ create(dto: CreateDeveloperDto){
 }
 ```
 
-Em `findAll`
+Em `findAll`, exclui a linha 
+
+```tsx
+return `This action returns all developers`;
+```
+E adiciona em seu lugar
 
 ```tsx
 return this.repository.find();
 ```
 
-Em `findOne`
+Em `findOne`, faz-se o mesmo processo adicionando
 
 ```tsx
 findOne(id : string){
@@ -256,13 +261,27 @@ async remove(id: string){
 }
 ```
 
+Em `developers.controller.ts`, dentro de @GET, @PATCH e @DELETE, exlui-se o + de (+id)
+
+```tsx
+return.this.developerService.findOne(id)
+return.this.developerService.upatade(id)
+return.this.developerService.remove(id)
+```
+
+Em `developers.service.ts`, para evitar erro de compilação, adicione em @Injectable() dentro de constructor()
+
+```tsx
+ @InjectRepository(Developer)
+```
+
 ## 🌟 Bônus: Boas Práticas REST
 
 - Utilização adequada dos métodos HTTP (GET, POST, PUT, DELETE).
 - Estruturação clara das rotas.
 - Tratamento apropriado de erros e respostas.
 
-Em `developers.controller.ts` 
+Em `developers.controller.ts`, dentro de @Delete
 
 ```tsx
 @Delete(':id')
@@ -271,7 +290,20 @@ Em `developers.controller.ts`
 
 No caso do **findOne, Update e Remove:**
 
-Serão assíncronos e ao invés de retornar direto será 
+Serão assíncronos (``) 
+```tsx
+@Get(':id')
+async findOne...
+
+@Patch(':id')
+async upatade...
+
+@Delete(':id')
+@HttpCode(204)
+async remove...
+```
+
+e ao invés de retornar direto será 
 
 ```tsx
 const developer = await this… 
