@@ -1,5 +1,5 @@
-import { BeforeInsert, Column, Entity, PrimaryColumn } from "typeorm"
-
+import { BeforeInsert, Column, Entity, OneToMany, PrimaryColumn } from "typeorm"
+import { Cidade } from "src/cidades/entities/cidade.entity"
 const { nanoid } = require("nanoid")
 
 @Entity('Ufs')
@@ -13,6 +13,11 @@ export class Uf {
     
     @Column()
     sigla: string
+
+    //Relacionamento : Uma UF tem varias cidades
+
+    @OneToMany(() => Cidade, (cidade) => cidade.uf)
+    cidades: Cidade[]
 
     @BeforeInsert()
     generateId(){

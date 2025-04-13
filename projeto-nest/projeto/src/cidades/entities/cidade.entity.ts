@@ -1,4 +1,6 @@
-import { BeforeInsert, Column, Entity, PrimaryColumn } from "typeorm"
+import { Estudante } from "src/estudantes/entities/estudante.entity"
+import { Uf } from "src/ufs/entities/uf.entity"
+import { BeforeInsert, Column, Entity, ManyToOne, OneToMany, PrimaryColumn } from "typeorm"
 
 const {nanoid} = require("nanoid")
 
@@ -11,8 +13,13 @@ export class Cidade {
     @Column()
     nome: string
     
-    @Column()
-    uf_id: number
+    // Relacionamento com UF
+    @ManyToOne(() => Uf, (uf) => uf.cidades)
+    uf: Uf
+
+    @OneToMany(() => Estudante  , (estudante) => estudante.cidade)
+    estudantes: Estudante[]
+
 
     @BeforeInsert()
     generateId(){

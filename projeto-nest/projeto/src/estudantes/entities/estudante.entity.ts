@@ -1,4 +1,5 @@
-import { BeforeInsert, Column, Entity, PrimaryColumn } from "typeorm"
+import { Cidade } from "src/cidades/entities/cidade.entity"
+import { BeforeInsert, Column, Entity, ManyToOne, PrimaryColumn } from "typeorm"
 
 const { nanoid } = require("nanoid")
 
@@ -20,8 +21,10 @@ export class Estudante {
     @Column()
     dt_nascimento: string
 
-    @Column()
-    cidade_id: number
+    // Relacionamento com Cidade (substitui o campo cidade_id)
+
+    @ManyToOne(() => Cidade, (cidade) => cidade.estudantes)
+    cidade: Cidade
 
     @BeforeInsert()
     generateId() {
