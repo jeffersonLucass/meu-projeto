@@ -19,7 +19,7 @@ Content-Type: application/json
 
 ## update ufs
 
-PATCH http://localhost:3000/ufs/dev_6K8AaZPYJzC23cNKNF6eO
+PATCH http://localhost:3000/ufs/dev_wvUVNEos5xRSENN8s58l9
 Content-Type: application/json
 
 {
@@ -28,4 +28,4 @@ Content-Type: application/json
 
 ## deletet ufs
 
-DELETE http://localhost:3000/ufs/dev_6K8AaZPYJzC23cNKNF6eO
+DELETE http://localhost:3000/ufs/dev_iCuyIB4iyERivXdsct3qW
