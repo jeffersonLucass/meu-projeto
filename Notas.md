@@ -203,7 +203,7 @@ No `developer.service.ts`
 constructor(
 	@InjectRepository(Developer)
 	private readonly repository: Repository<Developer>
-)
+){}
 ```
 
 ## 🧠 Lógica na Service
