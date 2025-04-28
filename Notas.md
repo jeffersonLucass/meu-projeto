@@ -244,7 +244,7 @@ Em `update`
 
 ```tsx
 async update(id: string, dto: UpdateDeveloperDto){
-	const developer = awaitthis.repository.findOneBy({id});
+	const developer = await this.repository.findOneBy({id});
 	if (!developer) return null;
 	this.repository.merge(developer,dto);
 	return this.repository.save(developer);
@@ -255,7 +255,7 @@ Em `remove`
 
 ```tsx
 async remove(id: string){
-	const developer = awaitthis.repository.findOneBy({id});
+	const developer = await this.repository.findOneBy({id});
 	if (!developer) return null;
 	return this.repository.remove(developer);
 }
