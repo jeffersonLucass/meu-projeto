@@ -169,7 +169,7 @@ Configuração no `developers.module.ts` :
 Configuração no `developer.entity.ts` :
 
 ```tsx
-const{nanoid} = require("nanoid)
+const{nanoid} = require("nanoid")
 
 	@Entity('developers')
 	export class Developer{
