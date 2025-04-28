@@ -47,7 +47,7 @@ nest new nome-do-projeto
 Comando para instalação dos pacotes:
 
 ```bash
-npm i nanoid@3 slite3 typeorm @nestjs/typeorm class-validator class-transformer 
+npm i nanoid@3 sqlite3 typeorm @nestjs/typeorm class-validator class-transformer 
 ```
 
 ## 🛠️ Criando a API com o Gerador de Código
